@@ -1,0 +1,52 @@
+
+MySQL
+/
+88fa542b
+Removed
+
+Oct 3, 2025 at 7:32 PM
+Details
+Build Logs
+Deploy Logs
+
+Deployment successful
+View more
+
+9 Variables
+MYSQL_URL
+mysql://${{MYSQLUSER}}:${{MYSQL_ROOT_PASSWORD}}@${{RAILWAY_PRIVATE_DOMAIN}}:3306/${{MYSQL_DATABASE}}
+MYSQLHOST
+${{RAILWAY_PRIVATE_DOMAIN}}
+MYSQL_ROOT_PASSWORD
+kRVvaVezSoKIWbcROKMDYaOhiLfzbJiV
+MYSQLDATABASE
+${{MYSQL_DATABASE}}
+MYSQLPASSWORD
+${{MYSQL_ROOT_PASSWORD}}
+MYSQL_PUBLIC_URL
+mysql://${{MYSQLUSER}}:${{MYSQL_ROOT_PASSWORD}}@${{RAILWAY_TCP_PROXY_DOMAIN}}:${{RAILWAY_TCP_PROXY_PORT}}/${{MYSQL_DATABASE}}
+MYSQLPORT
+3306
+MYSQL_DATABASE
+railway
+MYSQLUSER
+root
+Deployed via Docker Image
+mysql:9.4
+Dockerhub
+sha:91447
+Configuration
+Build
+Builder
+Railpack
+Deploy
+Start command
+docker-entrypoint.sh mysqld --innodb-use-native-aio=0 --disable-log-bin --performance_schema=0 --innodb-buffer-pool-size=1G
+Region
+us-east4-eqdc4a
+Number of replicas
+1
+Restart policy
+on failure
+Restart policy max retries
+10

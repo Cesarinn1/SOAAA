@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(lsof -ti:8080)",
+      "Bash(xargs kill -9)",
+      "Bash(curl -X POST http://localhost:8081/api/clientes -H \"Content-Type: application/json\" -d '{\n    \"\"\"\"nombres\"\"\"\": \"\"\"\"Test\"\"\"\",\n    \"\"\"\"apellidos\"\"\"\": \"\"\"\"Usuario\"\"\"\",\n    \"\"\"\"email\"\"\"\": \"\"\"\"test999@example.com\"\"\"\",\n    \"\"\"\"telefono\"\"\"\": \"\"\"\"1234567890\"\"\"\",\n    \"\"\"\"password\"\"\"\": \"\"\"\"test123\"\"\"\"\n  }' -w \"\\nHTTP Status: %{http_code}\\n\")",
+      "Bash(curl -X POST http://localhost:8081/api/clientes -H \"Content-Type: application/json\" -d '{\"\"nombres\"\":\"\"Test\"\",\"\"apellidos\"\":\"\"Usuario\"\",\"\"email\"\":\"\"test999@example.com\"\",\"\"telefono\"\":\"\"1234567890\"\",\"\"password\"\":\"\"test123\"\"}')",
+      "Bash(curl -s http://localhost:8081/api/clientes/test)",
+      "Bash(curl -s http://localhost:8081/h2-console)",
+      "Bash(curl:*)",
+      "Bash(./mvnw spring-boot:run:*)",
+      "Bash(lsof:*)",
+      "Read(//private/tmp/**)",
+      "Bash(git remote add:*)",
+      "Bash(git add:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

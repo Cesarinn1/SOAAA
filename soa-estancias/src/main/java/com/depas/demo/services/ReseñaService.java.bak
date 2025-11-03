@@ -1,0 +1,46 @@
+package com.depas.demo.services;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.depas.demo.models.ReseñaModel;
+import com.depas.demo.repositories.IReseñaRepository;
+
+@Service
+public class ReseñaService {
+
+    @Autowired
+    private IReseñaRepository reseñaRepository;
+
+    public List<ReseñaModel> getAllReseñas() {
+        return reseñaRepository.findAll();
+    }
+
+    public Optional<ReseñaModel> getReseñaById(Long id) {
+        return reseñaRepository.findById(id);
+    }
+
+    public ReseñaModel saveReseña(ReseñaModel reseña) {
+        return reseñaRepository.save(reseña);
+    }
+
+    public void deleteReseña(Long id) {
+        reseñaRepository.deleteById(id);
+    }
+
+    // Métodos adicionales
+    public List<ReseñaModel> getReseñasByPropiedad(Long propiedadId) {
+        return reseñaRepository.findByPropiedadId_propiedad(propiedadId);
+    }
+
+    public List<ReseñaModel> getReseñasByCliente(Long clienteId) {
+        return reseñaRepository.findByClienteId(clienteId);
+    }
+
+    public List<ReseñaModel> getReseñasByCalificacion(Integer calificacion) {
+        return reseñaRepository.findByCalificacion(calificacion);
+    }
+}
